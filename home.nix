@@ -1,4 +1,4 @@
-  { config, pkgs, lib, nur-ryan4yin, nur-wemeet, ... }:
+  { config, pkgs, lib, nur-ryan4yin, nur-wemeet, nur-xddxdd, ... }:
   {
     home.username = "qiqi49";
     home.homeDirectory = lib.mkForce "/home/qiqi49";
@@ -117,6 +117,11 @@
       wechat-uos
 
       nur-wemeet.packages.${pkgs.system}.wemeet
+      nur-xddxdd.packages.${pkgs.system}.baidunetdisk
+
+      # games 
+      steam-tui
+      steamcmd
       ];
 
     imports = [

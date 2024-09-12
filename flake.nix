@@ -10,6 +10,7 @@
       "https://anyrun.cachix.org"
       "https://nix-gaming.cachix.org"
       "https://ryan4yin.cachix.org"
+      "https://cache.garnix.io"
     ];
 
     # will be appended to the system-level trusted-public-keys
@@ -19,6 +20,7 @@
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       "ryan4yin.cachix.org-1:Gbk27ZU5AYpGS9i3ssoLlwdvMIh0NxG0w8it/cv9kbU="
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
     ];
   };
 
@@ -47,6 +49,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nur-xddxdd = {
+      url = "github:xddxdd/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # community wayland nixpkgs
     # nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     # anyrun - a wayland launcher
@@ -61,7 +68,7 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, home-manager, nur-ryan4yin, wallpapers, nur-wemeet, ... }: 
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, home-manager, nur-ryan4yin, wallpapers, nur-wemeet, nur-xddxdd, ... }: 
     let
       # Change the user to your own username
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];

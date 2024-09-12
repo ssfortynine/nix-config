@@ -7,8 +7,8 @@
       name = "JetBrainsMono";
       size = 
         if pkgs.stdenv.isDarwin
-	then 12
-	else 11;
+	then 11
+	else 10;
     };
 
     settings = {

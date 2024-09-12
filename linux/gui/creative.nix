@@ -15,6 +15,11 @@
 
     # this app consumes a lot of storage, so do not install it currently
     # kicad     # 3d printing, eletrical engineering
+    
+    drawio # creating diagrams
+
+    # WaveDrom command-line interface 
+    nodePackages_latest.wavedrom-cli 
 
     # fpga
     pkgs.python312Packages.apycula # gowin fpga
