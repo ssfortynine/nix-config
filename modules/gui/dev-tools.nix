@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, ...}: {
   home.packages = with pkgs; [
+    v2raya # proxy tool
+    insomnia # REST client
+    wireshark # network analyzer
+
     # Automatically trims your branches whose tracking remote refs are merged or gone
     # It's really useful when you work on a project for a long time.
     git-trim

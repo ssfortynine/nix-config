@@ -13,20 +13,17 @@
     # reaper # audio production
     # sonic-pi # music programming
 
-    # this app consumes a lot of storage, so do not install it currently
-    # kicad     # 3d printing, eletrical engineering
-    
     drawio # creating diagrams
 
     # WaveDrom command-line interface 
     nodePackages_latest.wavedrom-cli 
 
     # fpga
-    pkgs.python312Packages.apycula # gowin fpga
+    #pkgs.python312Packages.apycula # gowin fpga
     pkgs.yosys # fpga synthesis
     pkgs.nextpnr # fpga place and route
     pkgs.openfpgaloader # fpga programming
-    nur-ryan4yin.packages.${pkgs.system}.gowin-eda-edu-ide # app: `gowin-env` => `gw_ide` / `gw_pack` / ...
+    #nur-ryan4yin.packages.${pkgs.system}.gowin-eda-edu-ide # app: `gowin-env` => `gw_ide` / `gw_pack` / ...
   ];
 
   programs = {
@@ -56,7 +53,6 @@
         obs-command-source
         obs-move-transition
         obs-backgroundremoval
-        advanced-scene-switcher
         obs-pipewire-audio-capture
       ];
     };

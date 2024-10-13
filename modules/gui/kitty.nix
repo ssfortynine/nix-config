@@ -1,14 +1,14 @@
 { lib, pkgs, ...}: {
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
 
     font = {
       name = "JetBrainsMono";
       size = 
         if pkgs.stdenv.isDarwin
-	then 11
-	else 10;
+	      then 14
+      	else 13;
     };
 
     settings = {

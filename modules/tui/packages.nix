@@ -65,6 +65,7 @@ in {
     # llvmPackages.clang-unwrapped
     clang-tools
     lldb
+    llvm
 
     #-- python
       pyright # python language server
@@ -115,6 +116,7 @@ in {
       maven
       spring-boot-cli
       jdt-language-server
+      nodejs
 
       #-- zig
       zls
@@ -127,6 +129,9 @@ in {
       nodePackages.bash-language-server
       shellcheck
       shfmt
+
+      #-- isp
+      opencv # image processing library
   ] ++
   [
     proselint # English prose linter
@@ -134,11 +139,20 @@ in {
     #-- verilog / systemverilog
     verible
 
+    bear # tool to generate compilation database for clang based tools
+
     #-- Optional Requirements:
     nodePackages.prettier # common code formatter
     fzf
     gdu # disk usage analyzer, required by AstroNvim
     (ripgrep.override {withPCRE2 = true;}) # recursively searches directories for a regex pattern
+  ] ++
+  [
+    scala
+    sbt
+    mill
+    verilator
+    gtkwave
   ]
   );
 }

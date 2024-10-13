@@ -8,37 +8,37 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d44a9525-a5c1-45f5-868c-b74ad351d303";
+    { device = "/dev/disk/by-uuid/a3a09c84-b9ea-47a6-baa3-4f0393089923";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/d44a9525-a5c1-45f5-868c-b74ad351d303";
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/a3a09c84-b9ea-47a6-baa3-4f0393089923";
       fsType = "btrfs";
-      options = [ "subvol=home" "compress=zstd" ];
+      options = [ "subvol=nix" "compress=zstd" ];
     };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/d44a9525-a5c1-45f5-868c-b74ad351d303";
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/a3a09c84-b9ea-47a6-baa3-4f0393089923";
       fsType = "btrfs";
-      options = [ "subvol=nix" "noatime" "compress=zstd" ];
+      options = [ "subvol=home" "noatime" "compress=zstd"];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3C07-F213";
+    { device = "/dev/disk/by-uuid/8114-45B8";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/dc266675-d294-4c2c-a7c4-e8a08e98a672"; }
+    [ { device = "/dev/nvme0n1p2"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

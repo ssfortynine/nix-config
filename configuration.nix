@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/pipewire.nix
+      ./modules/base/pipewire.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -23,10 +23,6 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   services.v2raya.enable = true;
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://127.0.0.1:20171";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # do not need to keep too much generations
   boot.loader.systemd-boot.configurationLimit = 10;
@@ -55,25 +51,13 @@
   # services.xserver.enable = true;
   services.xserver = {
     enable = true;
-    desktopManager.plasma5.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
-  services.displayManager.sddm.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+  services.xserver.displayManager.gdm.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -101,21 +85,16 @@
     nethogs
     htop
     fastfetch
-    neovim
     rsync
     firefox
     v2raya
     zsh
-
-    # insatll helix editor from flake inputs
-    # inputs.helix.packages."${pkgs.system}".helix
   ];
 
   environment.variables.EDITOR = "vim";
 
   # Setting nix-channel configuration
   nix.settings.substituters = [ 
-    "https://mirror.sjtu.edu.cn/nix-channels/store" 
     "https://mirrors.ustc.edu.cn/nix-channels/store"
     "https://cache.nixos.org"
     ];
@@ -142,32 +121,18 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.nix-ld.enable = true;
 
-    # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11"; # Did you read the comment?
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    glib
+    openssl
+    gtk3
+    libGL
+  ];
+
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
 
