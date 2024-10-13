@@ -25,7 +25,6 @@
 ├── modules
 │   ├── base
 │   │   ├── btop.nix
-│   │   ├── container.nix
 │   │   ├── direnv.nix
 │   │   ├── pipewire.nix
 │   │   ├── pip.nix
@@ -81,8 +80,11 @@ My nix config file is mainly divided into base, gui, and tui sections.
 
 ### Base Components
 
-|                             | NixOS                                                                                                               |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-|**Resource monitor**         | [Btop][Btop]|
-|
+|                             | NixOS                                                                                  | Other |
+| --------------------------- | ---------------------------------------------------------------------------------------| ----  |
+|**Resource monitor**         | btop.nix | [Btop][Btop]|
+|**Environment Management**   | direnv.nix | --- |
+|**Pip mirror** | pip.nix | --- |
+|**Media server** | pipewire.nix| ---|
+|**
 
