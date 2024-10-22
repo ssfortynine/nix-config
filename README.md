@@ -28,7 +28,6 @@
 │   │   ├── direnv.nix
 │   │   ├── pipewire.nix
 │   │   ├── pip.nix
-│   │   ├── shell.nix
 │   │   └── tools.nix
 │   ├── base.nix
 │   ├── gui
@@ -80,11 +79,34 @@ My nix config file is mainly divided into base, gui, and tui sections.
 
 ### Base Components
 
-|                             | NixOS                                                                                  | Other |
-| --------------------------- | ---------------------------------------------------------------------------------------| ----  |
-|**Resource monitor**         | btop.nix | [Btop][Btop]|
-|**Environment Management**   | direnv.nix | --- |
-|**Pip mirror** | pip.nix | --- |
-|**Media server** | pipewire.nix| ---|
-|**
+|                             | NixOS                                        | Other |
+| --------------------------- | ---------------------------------------------| ----  |
+|**Resource monitor**         | btop.nix                                     | [Btop][Btop]|
+|**Environment Management**   | direnv.nix                                   | ---   |
+|**Pip mirror**               | pip.nix                                      | ---   |
+|**Media server**             | pipewire.nix                                 | ---   |
+|**Usb and VM tools**         | tools.nix                                    | ---   |
+
+### Gui components
+
+| NixOS                       | Descriptive                                  | Other |
+| --------------------------- | ---------------------------------------------| ----  |
+|**creative.nix**             | Drawing and screen software, FPGA tools      |[OBS][OBS]|  
+|**dev-tools.nix**            | Network, git, python dev tools               | ---   |
+|**games.nix**                | Games related(Steam)                         | ---   |
+|**gtk.nix**                  | Gtk ini                                      | ---   |
+|**i18n.nix**                 | Input method framework                       | [fcitx5][fcitx5]   |
+|**kitty.nix**                | Termial                                      |[kitty][kitty]|
+|**media.nix**                | Audio/video controller and tools             | [mpv][mpv]|
+|**misc.nix**                 | Message Apps and screenshot software         | ---|
+|**note-taking.nix**          | Note apps                                    | [obsidian][obsidian]|
+|**yazi.nix**                 | File manager                                 | [yazi][yazi]|
+|**fcitx5**                   | fcitx5 configuration                         | ---|
+|**wallpaper**                | wallpaper tools                              | --- |
+
+### Tui components
+
+| NixOS  | Descriptive | Other |
+| 
+
 
