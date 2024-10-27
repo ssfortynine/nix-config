@@ -169,5 +169,6 @@ nix 配置文件主要分为 base、gui 和 tui 三部分。
 [OBS]: https://obsproject.com
 [Yazi]: https://github.com/sxyazi/yazi
 [Fcitx5]: https://github.com/fcitx/fcitx5
-[ryan4yin/nix-config]:https://github.com/ryan4yin/nix-config
-[README_zn]:https://github.com/ssfortynine/nix-config/blob/main/README_zn.md
+[ryan4yin/nix-config]: https://github.com/ryan4yin/nix-config
+[README_zn]: https://github.com/ssfortynine/nix-config/blob/main/README_zn.md
+
