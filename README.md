@@ -22,6 +22,7 @@
 + [参考](#参考)
 
 > 该配置文件只针对于Linux版本，不确定MacOS是否适用
+> 英文README[README_zn][README_zn]
 
 ## :information_source: 配置文件
 
@@ -168,4 +169,4 @@ nix 配置文件主要分为 base、gui 和 tui 三部分。
 [Yazi]: https://github.com/sxyazi/yazi
 [Fcitx5]: https://github.com/fcitx/fcitx5
 [ryan4yin/nix-config]:https://github.com/ryan4yin/nix-config
-
+[README_zn]:https://github.com/ssfortynine/nix-config/blob/main/README_zn.md
