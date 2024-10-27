@@ -16,17 +16,6 @@
   # to the specified location in the Home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
 
-  # Recursively links files in a folder to a specified location in the Home directory
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts; recursive = true; # recursive the hotal directory
-  #   executable = true; # add [execute] permissions to all files
-  # };
-
-  # Hard-code the contents of the file directory in the nix configuration file as text
-  # home.file.".xxx".text = ''
-  #   xxx
-  # '';
-
   # Setting the mouse pointer size and font DPI(for 2k monitors)
   xresources.properties = {
     "Xcursor.size" = lib.mkForce 16;
