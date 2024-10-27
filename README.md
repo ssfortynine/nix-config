@@ -23,7 +23,7 @@
 
 > 该配置文件只针对于Linux版本，不确定MacOS是否适用
 
-英文介绍在[README_zn][README_zn]
+English introduction in [README_zn][README_zn]
 
 ## :information_source: 配置文件
 
