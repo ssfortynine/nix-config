@@ -12,10 +12,10 @@
 
     # instant messaging
     telegram-desktop
-    discord
+    # discord
     qq
-    wechat-uos
-    element-desktop
+    wechat
+    # element-desktop
 
     # remote desktop(rdp connect)
     remmina
@@ -23,9 +23,11 @@
 
     # misc
     flameshot
-    ventoy # multi-boot usb creator
     xclip # copy to clipboard
     xsel # copy to clipboard
+
+    # Jetbrains tools
+    jetbrains.idea-community
 
   ];
 

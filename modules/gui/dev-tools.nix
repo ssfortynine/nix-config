@@ -1,8 +1,12 @@
 { pkgs, ...}: {
   home.packages = with pkgs; [
     v2raya # proxy tool
+    clash-verge-rev
     insomnia # REST client
     wireshark # network analyzer
+    putty # A free ssh/teinet client
+    remmina # Remote desktop client
+    # todesk
 
     # Automatically trims your branches whose tracking remote refs are merged or gone
     # It's really useful when you work on a project for a long time.
@@ -13,5 +17,8 @@
     # need to run `conda-shell` before using command `conda`
     # conda is not available for MacOS
     conda 
+
+    # 
+    gnome-multi-writer
   ];
 }

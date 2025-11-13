@@ -6,15 +6,13 @@
     ./gui/misc.nix
     ./gui/yazi.nix
     ./gui/games.nix
-    ./gui/kitty.nix
+    ./gui/alacritty.nix
+    #./gui/kitty.nix
     ./gui/media.nix
     ./gui/creative.nix
     ./gui/dev-tools.nix
     ./gui/note-taking.nix
     ./gui/fcitx5
-    ./gui/wallpaper
     #./gui/desktop/fhs.nix
-    #./gui/desktop/remote-desktop/sunshine.nix
-    #./gui/desktop/remote-desktop/tailscale.nix
   ];
 }

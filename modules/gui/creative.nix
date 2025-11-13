@@ -20,6 +20,9 @@
     pkgs.yosys # fpga synthesis
     pkgs.nextpnr # fpga place and route
     pkgs.openfpgaloader # fpga programming
+
+    # layout
+    xdot
     #nur-ryan4yin.packages.${pkgs.system}.gowin-eda-edu-ide # app: `gowin-env` => `gw_ide` / `gw_pack` / ...
   ];
 
@@ -28,11 +31,10 @@
     obs-studio = {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [
-        # screen capture
+        #screen capture
         wlrobs
         # obs-ndi
         obs-vaapi
-        obs-nvfbc
         obs-teleport
         # obs-hyperion
         droidcam-obs

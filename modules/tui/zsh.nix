@@ -17,7 +17,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    initExtra = ''
+    initContent = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
       
       # ccache

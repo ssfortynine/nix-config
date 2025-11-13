@@ -3,23 +3,34 @@
   pkgs,
   lib,
   nur-ryan4yin,
-  nur-wemeet,
   nur-xddxdd,
-  tg-searcher, 
+  tg-searcher,
+  kickstart-nixvim,
   nixvim-config,
   ...
-}: {
+}:
+{
   home.username = "qiqi49";
   home.homeDirectory = lib.mkForce "/home/qiqi49";
-
   # Link the configuration file in the current folder directly
   # to the specified location in the Home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
+  #home.file.".config/i3/wallpaper.jpg".source = /home/qiqi49/Pictures/ranni.jpeg;
+
+  # Recursively links files in a folder to a specified location in the Home directory
+  # home.file.".config/i3/scripts" = {
+  #   source = ./scripts; recursive = true; # recursive the hotal directory
+  #   executable = true; # add [execute] permissions to all files
+  # };
+
+  # Hard-code the contents of the file directory in the nix configuration file as text
+  # home.file.".xxx".text = ''
+  #   xxx
+  # '';
 
   # Setting the mouse pointer size and font DPI(for 2k monitors)
   xresources.properties = {
     "Xcursor.size" = lib.mkForce 16;
-    "Xft.dpi" = lib.mkForce 172;
+    "Xft.dpi" = lib.mkForce 228;
   };
 
   # Install some common software via home.packages
@@ -96,13 +107,19 @@
     zotero_7
     google-chrome
 
-    nur-wemeet.packages.${pkgs.system}.wemeet
-    nur-xddxdd.packages.${pkgs.system}.baidunetdisk
-    libreoffice
+    wemeet
+    baidupcs-go
+    wpsoffice
     #neve.packages.${pkgs.system}.default
+    #kickstart-nixvim.packages.${pkgs.system}.default
     nixvim-config.packages.${pkgs.system}.default
     jetbrains.idea-community
     hexo-cli
+    linuxKernel.packages.linux_6_6_hardened.v4l2loopback
+    linuxKernel.packages.linux_6_6_hardened.virtualbox
+    virtualbox
+    texmaker
+    texliveFull
   ];
 
   imports = [
@@ -111,7 +128,7 @@
     ./modules/tui.nix
   ];
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.05";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/base/pipewire.nix
+      ./modules/gui/desktop/zerotier.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -52,9 +53,14 @@
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
+    displayManager.sessionCommands = ''
+      ${pkgs.xorg.xauth}/bin/xauth generate $DISPLAY . trusted
+    '';
   };
 
   services.xserver.displayManager.gdm.enable = true;
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "qiqi49";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -91,6 +97,14 @@
     zsh
   ];
 
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
+};
+
+  security.polkit.enable = true;
   environment.variables.EDITOR = "vim";
 
   # Setting nix-channel configuration
@@ -131,8 +145,18 @@
     gtk3
     libGL
   ];
+  # Enable Flatpak
+  services.flatpak.enable = true;
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  #Enable virtualbox
+   virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ "qiqi49" ];
+   # virtualbox exts (for use with usb)
+   # forgive me
+   virtualisation.virtualbox.host.enableExtensionPack = true;
+   virtualisation.virtualbox.host.enableHardening = false;
+
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
 

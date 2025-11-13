@@ -68,22 +68,29 @@ in {
     llvm
 
     #-- python
-      pyright # python language server
-      (python311.withPackages (
-        ps:
-          with ps; [
-            ruff-lsp
-            black # python formatter
+      #pyright # python language server
+      #(python312.withPackages (
+      #  ps:
+      #    with ps; [
+      #      ruff
+      #      black # python formatter
             # debugpy
 
             # my commonly used python packages
-            jupyter
-            ipython
-            pandas
-            requests
-            pyquery
-            pyyaml
-            boto3
+      #      jupyter
+      #      ipython
+      #      pandas
+      #      requests
+      #      pyquery
+      #      pyyaml
+      #      boto3
+            
+      #      numpy
+      #      opencv
+      #      pygame
+
+            # -- deep learning
+      #      torch
 
             ## emacs's lsp-bridge dependenciesge
             # epc
@@ -93,8 +100,8 @@ in {
             # setuptools
             # paramiko
             # rapidfuzz
-          ]
-      ))
+      #    ]
+      #))
 
       #-- rust
       rust-analyzer
@@ -110,13 +117,16 @@ in {
       gopls # go language server
       delve # go debugger
 
-      # -- java
+      #-- java
       jdk17
       gradle
       maven
       spring-boot-cli
       jdt-language-server
       nodejs
+      
+      #-- scala
+      scala_2_12
 
       #-- zig
       zls
@@ -132,6 +142,14 @@ in {
 
       #-- isp
       opencv # image processing library
+
+      #-- ruby
+      ruby 
+
+      #-- qt
+      qt5.qtbase
+      qt5.qtx11extras
+      libsForQt5.qtwayland
   ] ++
   [
     proselint # English prose linter
@@ -148,11 +166,11 @@ in {
     (ripgrep.override {withPCRE2 = true;}) # recursively searches directories for a regex pattern
   ] ++
   [
-    scala
     sbt
     mill
     verilator
     gtkwave
+    iverilog
   ]
   );
 }

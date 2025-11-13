@@ -1,7 +1,6 @@
 { lib, pkgs, ...}: {
   programs.kitty = {
-    enable = true;
-    themeFile = "Catppuccin-Mocha";
+    enable = true;   themeFile = "Catppuccin-Mocha";
 
     font = {
       name = "JetBrainsMono";
