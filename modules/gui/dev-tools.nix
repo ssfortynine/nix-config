@@ -8,6 +8,12 @@
     remmina # Remote desktop client
     # todesk
 
+    tigervnc
+    xorg.xinit
+    icewm
+    dbus
+    x11vnc
+
     # Automatically trims your branches whose tracking remote refs are merged or gone
     # It's really useful when you work on a project for a long time.
     git-trim

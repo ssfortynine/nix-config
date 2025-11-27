@@ -110,6 +110,7 @@
     wemeet
     baidupcs-go
     wpsoffice
+    tailscale
     #neve.packages.${pkgs.system}.default
     #kickstart-nixvim.packages.${pkgs.system}.default
     nixvim-config.packages.${pkgs.system}.default

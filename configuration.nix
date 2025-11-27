@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
       ./modules/base/pipewire.nix
       ./modules/gui/desktop/zerotier.nix
+      ./modules/gui/desktop/tailscale.nix
+      ./modules/gui/desktop/vnc.nix
+      ./modules/gui/desktop/sunshine.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -61,6 +64,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "qiqi49";
+  services.gnome.gnome-remote-desktop.enable = true;
+  
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -71,7 +76,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.qiqi49 = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "input" "video" ];
     packages = with pkgs; [
       firefox
       tree
