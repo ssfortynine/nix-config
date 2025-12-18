@@ -1,9 +1,8 @@
 <div align="center">
-  <img width="120px" src="./images/logo.png" alt="Logo" />
   <h1>ssfortynine's Nix Config</h1>
   
   <p>
-    <img alt="NixOS Version" src="https://img.shields.io/badge/NixOS-24.05-blue?logo=nixos&logoColor=white&style=flat-square">
+    <img alt="NixOS Version" src="https://img.shields.io/badge/NixOS-25.11-blue?logo=nixos&logoColor=white&style=flat-square">
     <img alt="Nix Flakes" src="https://img.shields.io/badge/Nix_Flakes-Enabled-ff66ff?logo=nix&logoColor=white&style=flat-square">
     <img alt="Repo Size" src="https://img.shields.io/github/repo-size/ssfortynine/nix-config?style=flat-square">
     <br/>
@@ -77,23 +76,6 @@ The configuration is strictly divided into three layers: `base`, `gui`, and `tui
 | **ssh.nix** | SSH server configuration | - |
 | **git.nix** | Git configuration & aliases | - |
 
-### 📂 Directory Structure
-
-```bash
-.
-├── flake.nix                  # Entry point (inputs/outputs)
-├── configuration.nix          # Main system config import
-├── home.nix                   # Home-manager entry point
-├── modules                    # Modular configuration files
-│   ├── base                   # System basics (kernel, audio, etc.)
-│   ├── gui                    # Graphical apps & Desktop settings
-│   │   ├── desktop            # Remote desktop & FHS
-│   │   ├── fcitx5             # Input method config
-│   │   └── wallpaper          # Wallpaper switcher scripts
-│   └── tui                    # CLI tools (Zellij, Zsh, Git)
-└── ...
-```
-
 ---
 
 <a name="-中文"></a>
@@ -149,23 +131,6 @@ The configuration is strictly divided into three layers: `base`, `gui`, and `tui
 | **starship.nix** | 跨 Shell 的提示符主题 | [Starship][Starship] |
 | **ssh.nix** | SSH 服务端配置 | - |
 | **git.nix** | Git 全局配置与别名 | - |
-
-### 📂 目录结构树
-
-```bash
-.
-├── flake.nix                  # Flake 入口文件 (定义输入源与输出)
-├── configuration.nix          # 系统配置主入口
-├── home.nix                   # Home-manager 配置入口
-├── modules                    # 模块化配置文件目录
-│   ├── base                   # 基础系统配置
-│   ├── gui                    # 图形界面配置
-│   │   ├── desktop            # 远程桌面与 FHS 支持
-│   │   ├── fcitx5             # 输入法详细配置
-│   │   └── wallpaper          # 壁纸自动切换脚本
-│   └── tui                    # 终端工具配置 (Zellij, Zsh, Git)
-└── ...
-```
 
 ---
 

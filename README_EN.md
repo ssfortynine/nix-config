@@ -86,66 +86,6 @@ My nix config file is mainly divided into base, gui, and tui sections.
 |**starship.nix** | Termial theme | [starship][Starship] |
 |**zsh.nix** | Environment configuration | --- |
 
-
-## Directory Tree
-```bash
-.
-├── configuration.nix
-├── flake.lock
-├── flake.nix
-├── hardware-configuration.nix
-├── home.nix
-├── lib
-│   └── default.nix
-├── license.tar.gz
-├── modules
-│   ├── base
-│   │   ├── btop.nix
-│   │   ├── direnv.nix
-│   │   ├── pipewire.nix
-│   │   ├── pip.nix
-│   │   └── tools.nix
-│   ├── base.nix
-│   ├── gui
-│   │   ├── creative.nix
-│   │   ├── desktop
-│   │   │   ├── fhs.nix
-│   │   │   └── remote-desktop
-│   │   │       ├── sunshine.nix
-│   │   │       └── tailscale.nix
-│   │   ├── dev-tools.nix
-│   │   ├── fcitx5
-│   │   │   ├── classicui.conf
-│   │   │   ├── default.nix
-│   │   │   └── profile
-│   │   ├── games.nix
-│   │   ├── gtk.nix
-│   │   ├── i18n.nix
-│   │   ├── kitty.nix
-│   │   ├── media.nix
-│   │   ├── misc.nix
-│   │   ├── note-taking.nix
-│   │   ├── wallpaper
-│   │   │   ├── default.nix
-│   │   │   └── wallpaper-switcher.py
-│   │   ├── xdg.nix
-│   │   └── yazi.nix
-│   ├── gui.nix
-│   ├── tui
-│   │   ├── git.nix
-│   │   ├── note-taking.nix
-│   │   ├── packages.nix
-│   │   ├── ssh.nix
-│   │   ├── starship.nix
-│   │   ├── zellij
-│   │   │   ├── config.kdl
-│   │   │   ├── default.nix
-│   │   │   └── README.md
-│   │   └── zsh.nix
-│   └── tui.nix
-└── README.md
-
-```
 ## References
 
 + Nix Config
